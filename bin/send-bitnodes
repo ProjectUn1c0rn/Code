@@ -1,0 +1,14 @@
+#!/usr/bin/php -q
+<?php
+echo 'Loading nodes from bitnodes.io : ';
+$nodes = json_decode(
+	file_get_contents('https://getaddr.bitnodes.io/nodes/latest.json')
+);
+echo 'OK'.PHP_EOL;
+foreach ($nodes->nodes as $node) {
+	list($ip) = $node;
+	if(!filter_var($ip,FILTER_VALIDATE_IP,FILTER_FLAG_IPV4)) continue ;
+	//send to scan here ;)
+	//need input from gearman now
+	sleep(2);
+}

@@ -1,0 +1,138 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "41120acc74d8842c9272dd281adf9894",
+    "packages": [
+        {
+            "name": "clue/hexdump",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-hexdump.git",
+                "reference": "d2fdb529522f60fd0855cb424afaa77ad9b1493b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-hexdump/zipball/d2fdb529522f60fd0855cb424afaa77ad9b1493b",
+                "reference": "d2fdb529522f60fd0855cb424afaa77ad9b1493b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Clue\\Hexdump": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "View any (binary) string as a hexdump",
+            "homepage": "https://github.com/clue/hexdump",
+            "keywords": [
+                "binary",
+                "hexdump",
+                "network protocol debugging"
+            ],
+            "time": "2013-06-22 21:28:05"
+        },
+        {
+            "name": "torophp/torophp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anandkunal/ToroPHP.git",
+                "reference": "c81ba3718de0e88e544565a5e6a74271bf3feb45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anandkunal/ToroPHP/zipball/c81ba3718de0e88e544565a5e6a74271bf3feb45",
+                "reference": "c81ba3718de0e88e544565a5e6a74271bf3feb45",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Toro.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Bean",
+                    "email": "martin@martinbean.co.uk",
+                    "homepage": "http://www.martinbean.co.uk",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kunal Anand",
+                    "email": "kunal.r.anand@gmail.com",
+                    "homepage": "http://kunalanand.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Danillo César de O. Melo",
+                    "email": "danillos@gmail.com",
+                    "homepage": "http://www.danillocesar.com.br/",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Robbie Coleman",
+                    "homepage": "http://robbie.robnrob.com",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Berker Peksag",
+                    "homepage": "http://berkerpeksag.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jason Mooberry",
+                    "homepage": "http://jasonmooberry.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "John Kurkowski",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Toro is a PHP router for developing RESTful web applications and APIs.",
+            "homepage": "http://github.com/anandkunal/ToroPHP",
+            "keywords": [
+                "framework",
+                "php",
+                "router"
+            ],
+            "time": "2014-06-02 12:00:49"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "torophp/torophp": 20
+    },
+    "prefer-stable": false,
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

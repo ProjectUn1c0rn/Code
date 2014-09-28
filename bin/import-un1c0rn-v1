@@ -1,0 +1,46 @@
+#!/usr/bin/php -q
+<?php
+/* import hosts from previous database :*/
+
+require '/srv/un1c0rn/bootstrap.php';
+$_mongo = new MongoClient('mongodb://127.0.0.1');
+$_pwnDb = $_mongo->pwn;
+$_hostDb = new \Un1c0rn\ElasticDb('pwn','hosts'/*,'10.11.12.201'*/);
+$time = time();
+$start = file_get_contents('/etc/un1c0rn.lastsync');
+try {
+echo 'Importing un1c0rn v1 to ES : ';
+foreach($_pwnDb->hosts->find(
+	array('updated'=>array('$gt'=>$start)->sort(array('updated'=> -1)) as $host) {
+	$hostNew = array();
+	$hostOld = json_decode(json_encode($host),true);
+	$hostNew['ip'] = $id = $hostOld['ip'];
+	$hostNew['ports'] = isset($hostOld['openPorts']) ? $hostOld['openPorts']: array();
+	$hostNew['leaks'] = $hostNew['tags'] = array();
+	if(isset($hostOld['mysqlWeak'])) {
+		$hostNew['leaks'][] = array('date'=>$hostOld['updated'] ? : time(),'type' => 'weak-mysql' ,'data' => $hostOld['mysqlWeak'],'port'=> 3306);
+		$hostNew['tags'][] = 'mysql';
+		if(!in_array(3306,$hostNew['ports'])) $hostNew['ports'][] = 3306;
+	}
+        if(isset($hostOld['mongoData'])) {
+                $hostNew['leaks'][] = array('date'=>$hostOld['updated'] ? : time(),'type' => 'weak-mongo' ,'data' => $hostOld['mongoData'],'port'=> 27017);
+                $hostNew['tags'][] = 'mongo';
+		if(!in_array(27017,$hostNew['ports'])) $hostNew['ports'][] = 27017;
+        }
+
+	if(isset($hostOld['hbData'])) {
+                $hostNew['leaks'][] = array('date'=>$hostOld['updated'] ? : time(),'type' => 'heartbleed' ,'data' => $hostOld['hbData']['data'],'port' => $hostOld['hbData']['port']);
+                $hostNew['tags'][] = 'heartbleed';
+		if(!in_array($hostOld['hbData']['port'],$hostNew['ports'])) $hostNew['ports'][] = $hostOld['hbData']['port'];
+        }
+
+	if(isset($hostOld['updated'])) $hostNew['updated'] = $hostOld['updated'];
+	if(isset($hostOld['hostname'])) $hostNew['hostname'] = $hostOld['hostname'];
+	$_hostDb->save($id,$hostNew);
+	echo '.';
+}
+file_put_contents('/etc/un1c0rn.lastsync',time());
+echo ' done'.PHP_EOL;
+} catch (Exception $e) {
+	echo $e->getMessage().EOL;
+}

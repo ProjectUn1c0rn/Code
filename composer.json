@@ -1,0 +1,9 @@
+ {
+"autoload": {
+        "psr-4": {"": "src/"}
+    },
+    "require": {
+        "clue/hexdump": "0.2.*",
+	"torophp/torophp": "dev-master" 
+   }
+}

@@ -1,0 +1,16 @@
+#!/usr/bin/php -q
+<?php
+require '/srv/un1c0rn/bootstrap.php';
+try {
+
+	$Cli = new \Un1c0rn\Cli('\\Un1c0rn\\Workers');
+
+	$data = $Cli->run();
+
+	if(is_string($data)) die($data.PHP_EOL);
+	die(json_encode($data).PHP_EOL);
+
+} catch (Exception $e) {
+	echo('Error: '.$e->getMessage().PHP_EOL);
+	exit(1);
+}
