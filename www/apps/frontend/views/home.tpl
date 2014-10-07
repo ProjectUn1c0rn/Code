@@ -1,6 +1,8 @@
 
  <div class="container">
-  <p><strong>Project Un1c0rn</strong> is a search engine exposing <strong>open, vulnerable and weak services</strong> since May 2014 ... Leaking <strong>mysql</strong>, <strong>mongo</strong> and <strong>heartbleed</strong> services worldwide ... Disclosure is the solution ... Un1c0rn won't die ... We don't ask, we host ... </p>
+  <p><strong>Project Un1c0rn</strong> is a search engine exposing <strong>open, vulnerable and weak services</strong> since May 2014 ... Leaking <strong>mysql</strong>, <strong>mongo</strong> and <strong>heartbleed</strong> services worldwide ... Disclosure is the solution ... Un1c0rn won't die ... We don't ask, we host ...
+<strong>Back online, uptime should now be good, DB migration coming later.</strong>   <em>Leakhorn</em>
+  </p>
 </div>
 <div class="container-fluid">
     <div class="row-fluid" >
@@ -15,5 +17,5 @@
         </div>
         </form>
     </div>
-    <p>Back online, uptime should now be good, DB migration coming later. <em>Leakhorn</em></p>
+
 </div>
