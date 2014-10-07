@@ -2,6 +2,7 @@
 namespace Un1c0rn\Web\Frontend;
 class Page extends \Un1c0rn\Web\WebModule {
 	function get($pageId) {
+		global $config;
 		$this->cache304($page,3600);
 		$this->setData('view','views/page.tpl');
 		$_e = new \Un1c0rn\ElasticDb('site','pages',$config['elasticsearch']['ip']);
