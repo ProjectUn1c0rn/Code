@@ -8,12 +8,15 @@ class Search extends \Un1c0rn\Web\WebModule {
 		$this->setData('view','views/results.tpl');
 		$_e = new \Un1c0rn\ElasticDb('pwn','hosts',$config['elasticsearch']['ip']);
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
+		/* let's stress test. don't get your hopes up, we'll make sure free data is a thing of the past !
+		 * (especially when the new workers will be ready to scan )
 		if($page > 1 && $_SERVER['SERVER_NAME'] =='un1c0rn.net'){
 			    $this->setData('view','views/results-fo.tpl');
 					http_response_code(402);
 					return $this->render();
 
 		}
+		*/
 		$data = $_e->search($_GET['q'],$page);
 		$data['total'] = $data['hits']['total'];
 		$viewResults = array();
