@@ -4,7 +4,7 @@ class Page extends \Un1c0rn\Web\WebModule {
 	function get($pageId) {
 		$this->cache304($page,3600);
 		$this->setData('view','views/page.tpl');
-		$_e = new \Un1c0rn\ElasticDb('site','pages');
+		$_e = new \Un1c0rn\ElasticDb('site','pages',$config['elasticsearch']['ip']);
 		$page = $_e->load($pageId);
 		if(!$page) {
 			$this->templateData['title'] = '404 - Page not found';

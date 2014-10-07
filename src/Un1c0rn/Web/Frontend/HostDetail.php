@@ -3,7 +3,7 @@ namespace Un1c0rn\Web\Frontend;
 class HostDetail extends WebModule {
 	function get($ip) {
 		$this->setData('view','views/details.tpl');
-		$_hostDb = new \Un1c0rn\ElasticDb('pwn','hosts');
+		$_hostDb = new \Un1c0rn\ElasticDb('pwn','hosts',$config['elasticsearch']['ip']);
 		$data = $_hostDb->load($ip);
 		$this->templateData = array_merge($this->templateData,array(
 			'host' => $data
