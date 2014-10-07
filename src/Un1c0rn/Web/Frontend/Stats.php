@@ -1,6 +1,6 @@
 <?php
 namespace Un1c0rn\Web\Frontend;
-class Stats extends WebModule {
+class Stats extends \Un1c0rn\Web\WebModule {
 	function get() {
 		global $config;
 		$this->cache304('stats',120);
