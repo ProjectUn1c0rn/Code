@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ IF $page_title }}{{ $page_title | escape }} - {{ END }}Un1c0rn Exposed</title>
-    <link rel="stylesheet" href="/3rdparty/bootstrap.slate.min.css?2">
+    <link rel="stylesheet" href="/3rdparty/bootstrap.slate.min.css?21">
   </head>
   <body>
     <nav class="navbar navbar-default navbar-static-top" role="navigation">

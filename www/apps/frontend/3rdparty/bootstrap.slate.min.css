@@ -22,6 +22,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
+	overflow: auto;
 }
 
 .container-fluid{
@@ -217,11 +218,11 @@ img { border: 0; max-width: 100%; }
 
 @media (max-width: 700px) {
   .page-header h1 { font-size: 1.8em; }
-  
+
   ul.timeline:before {
     left: 40px;
   }
-  
+
   .tldate { width: 140px; }
 
   ul.timeline li .timeline-panel {
@@ -258,10 +259,3 @@ img { border: 0; max-width: 100%; }
     right: auto;
   }
 }
-
-
-
-
-
-
-
