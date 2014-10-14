@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <title>{{ IF $page_title }}{{ $page_title | escape }} - {{ END }}Un1c0rn Exposed</title>
     <link rel="stylesheet" href="/3rdparty/bootstrap.slate.min.css?21">
   </head>
