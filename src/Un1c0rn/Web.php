@@ -1,5 +1,5 @@
 <?php
-namepsace Un1c0rn;
+namespace Un1c0rn;
 class WebModule {
 	function __construct() {
 		//Temporary, setting default template :
